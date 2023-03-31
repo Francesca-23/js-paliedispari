@@ -4,21 +4,45 @@
 2-Creare una funzione per capire se la parola inserita è palindroma
 */
 
-    let parola = document.getElementById('parola').innerText= "anna";
-    console.log(parola)
+    let parola = document.getElementById('parola').value;
     
+    //funzione per invertire la parola 
+    function palindroma(parola){
+
+        let stringa = ""
+
+        for(let i = parola.length -1; i >= 0; i--){
+            stringa += parola[i];
+        }
+
+        return stringa
+    }
     
-    let lettera = parola.split("");
-    console.log(lettera)
-    
-    let stringa
-    
-    for(let i= lettera.length; i >= 0; i--){
-    
-        stringa = lettera[i];
-        console.log(stringa)
+    let parolaPali = palindroma(parola)
+
+    //funzione per paragonare le due parole
+    function parole(){
+
+        parola = document.getElementById('parola').value;
+        parolaPali = palindroma(parola)
+
+        if(parola == parolaPali){
+            document.querySelector('#container').innerHTML = "La parola è palindroma!"
+
+        }else{
+            document.querySelector('#container').innerHTML = "La parola non è palindroma!"
+        }
     }
 
+       
+    
+
+    
+    
+
+    
+
+    
 
     
     
